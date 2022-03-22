@@ -1,13 +1,13 @@
 //
-//  LandmarksUITestsLaunchTests.swift
-//  LandmarksUITests
+//  ScooterUITestsLaunchTests.swift
+//  ScooterUITests
 //
-//  Created by 然 on 2022/3/18.
+//  Created by 傅正森 on 2022/3/20.
 //
 
 import XCTest
 
-class LandmarksUITestsLaunchTests: XCTestCase {
+class ScooterUITestsLaunchTests: XCTestCase {
 
     override class var runsForEachTargetApplicationUIConfiguration: Bool {
         true

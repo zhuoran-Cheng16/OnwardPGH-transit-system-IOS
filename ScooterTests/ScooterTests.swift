@@ -1,14 +1,14 @@
 //
-//  LandmarksTests.swift
-//  LandmarksTests
+//  ScooterTests.swift
+//  ScooterTests
 //
-//  Created by 然 on 2022/3/18.
+//  Created by 傅正森 on 2022/3/20.
 //
 
 import XCTest
-@testable import Landmarks
+@testable import Scooter
 
-class LandmarksTests: XCTestCase {
+class ScooterTests: XCTestCase {
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
