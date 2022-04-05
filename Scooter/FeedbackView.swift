@@ -15,6 +15,6 @@ struct FeedbackView: View {
 
 struct FeedbackView_Previews: PreviewProvider {
     static var previews: some View {
-        FeedbackView()
+        FeedbackView().previewDevice("iPhone 13 Pro")
     }
 }
