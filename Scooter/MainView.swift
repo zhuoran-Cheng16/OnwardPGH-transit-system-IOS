@@ -36,8 +36,13 @@ struct MainView: View {
                     Image(systemName: "parkingsign")
                     Text("Park")
                 }
-            }
+            FeedbackView()
+                .tabItem{
+                    Image(systemName: "hand.thumbsup")
+                    Text("FeedBack")
+                }
     }
+}
 }
 
 struct MainView_Previews: PreviewProvider {
