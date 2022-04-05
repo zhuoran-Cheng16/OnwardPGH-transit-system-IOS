@@ -6,46 +6,97 @@
 //
 
 import SwiftUI
-
+struct GrowingButton: ButtonStyle {
+    func makeBody(configuration: Configuration) -> some View {
+        configuration.label
+            .padding()
+            .foregroundColor(.white)
+            .clipShape(Capsule())
+            .scaleEffect(configuration.isPressed ? 1.2 : 1)
+            .animation(.easeOut(duration: 0.2), value: configuration.isPressed)
+    }
+}
 struct FeedbackView: View {
-    @State var button1="Happy"
-    @State var button2="Sad"
-    
+    @State var button1="😣"
+    @State var button2="☹️"
+    @State var button3="😐"
+    @State var button4="😍"
+    @State private var feedback = ""
     var body: some View {
         VStack {
-                Text("Please choose one")
+            Text("How was your trip?")
+                .fontWeight(.heavy)
                     .foregroundColor(.blue)
-                    
+                    .font(.largeTitle)
+            HStack{
                 Button(action:{
-                    print(button1)
+                    feedback="very_bad"
                 }) {
                     HStack {
-                        Image(systemName: "face.smiling")
                         Text(button1)
+                            .font(.largeTitle)
                     }.padding(10.0)
-                    .overlay(
-                        RoundedRectangle(cornerRadius: 10.0)
-                            .stroke(lineWidth: 2.0)
-                        )
+                        
+            
                     }
                 Button(action:{
-                    print(button2)
+                    feedback="bad"
                 }) {
                     HStack {
-                        Image(systemName: "exclamationmark.circle.fill")
                         Text(button2)
+                            .font(.largeTitle)
                     }.padding(10.0)
-                    .overlay(
-                        RoundedRectangle(cornerRadius: 10.0)
-                            .stroke(lineWidth: 2.0)
-                        )
+            
                     }
-                    
-                    Spacer()
-                }
+                Button(action:{
+                    feedback="average"
+                }) {
+                    HStack {
+                        Text(button3)
+                            .font(.largeTitle)
+                    }.padding(10.0)
+            
+                    }
+                Button(action:{
+                    feedback="prefect"
+                }) {
+                    HStack {
+                        Text(button4)
+                            .font(.largeTitle)
+                    }.padding(10.0)
+           
+                    }
+                }.buttonStyle(GrowingButton())
+            if feedback != "" {
+                Text(getResponseWithEmoji(feedback))
+                    .fontWeight(.heavy)
+                        .foregroundColor(.red)
+                        .font(.subheadline)
+                Text("Thanks for feedback!")
+                    .fontWeight(.heavy)
+                        .foregroundColor(.blue)
+                        .font(.subheadline)
             }
+            
+        }
+            }
+    func getResponseWithEmoji(_ emoji: String) -> String {
+        switch feedback {
+        case "very_bad":
+            return "Very Bad"
+        case "bad":
+            return "Bad"
+        case "average":
+            return "Average"
+        case "prefect":
+            return "Perfect"
+        default:
+            return ""
+        }
+
 
         }
+}
 
 struct FeedbackView_Previews: PreviewProvider {
     static var previews: some View {
