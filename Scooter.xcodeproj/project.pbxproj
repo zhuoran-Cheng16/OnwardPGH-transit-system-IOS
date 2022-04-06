@@ -22,6 +22,7 @@
 		800706B127FE22E900EC42E1 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 800706B027FE22E900EC42E1 /* Alamofire */; };
 		801C3FE827E9056900F9556C /* ParkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 801C3FE727E9056900F9556C /* ParkView.swift */; };
 		801C3FEA27E908E300F9556C /* StartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 801C3FE927E908E300F9556C /* StartView.swift */; };
+		E39CACFE27FE23BD00752686 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = E39CACFD27FE23BD00752686 /* Alamofire */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,7 @@
 		4202388827E83FF90042E988 /* MapView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		801C3FE727E9056900F9556C /* ParkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkView.swift; sourceTree = "<group>"; };
 		801C3FE927E908E300F9556C /* StartView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartView.swift; sourceTree = "<group>"; };
+		E39CACFF27FE26D500752686 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +69,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				800706B127FE22E900EC42E1 /* Alamofire in Frameworks */,
+				E39CACFE27FE23BD00752686 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -110,6 +113,7 @@
 		4202384D27E8285D0042E988 /* Scooter */ = {
 			isa = PBXGroup;
 			children = (
+				E39CACFF27FE26D500752686 /* Info.plist */,
 				256B574127FCE920001FF7EE /* FeedbackView.swift */,
 				4202388827E83FF90042E988 /* MapView.swift */,
 				4202388627E83FEC0042E988 /* LandmarksApp.swift */,
@@ -168,6 +172,7 @@
 			name = Scooter;
 			packageProductDependencies = (
 				800706B027FE22E900EC42E1 /* Alamofire */,
+				E39CACFD27FE23BD00752686 /* Alamofire */,
 			);
 			productName = Scooter;
 			productReference = 4202384B27E8285D0042E988 /* Scooter.app */;
@@ -243,6 +248,7 @@
 			mainGroup = 4202384227E8285D0042E988;
 			packageReferences = (
 				800706AF27FE22E900EC42E1 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				E39CACFC27FE23BD00752686 /* XCRemoteSwiftPackageReference "Alamofire" */,
 			);
 			productRefGroup = 4202384C27E8285D0042E988 /* Products */;
 			projectDirPath = "";
@@ -456,6 +462,7 @@
 				DEVELOPMENT_TEAM = 84X6B337TD;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Scooter/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -485,6 +492,7 @@
 				DEVELOPMENT_TEAM = 84X6B337TD;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Scooter/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -625,10 +633,23 @@
 				minimumVersion = 5.5.0;
 			};
 		};
+		E39CACFC27FE23BD00752686 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.5.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
 		800706B027FE22E900EC42E1 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 800706AF27FE22E900EC42E1 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+		E39CACFD27FE23BD00752686 /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 800706AF27FE22E900EC42E1 /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
