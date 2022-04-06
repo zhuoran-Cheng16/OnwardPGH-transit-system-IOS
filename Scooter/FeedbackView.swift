@@ -39,6 +39,7 @@ struct FeedbackView: View {
                         
             
                     }
+                
                 Button(action:{
                     feedback="bad"
                 }) {
@@ -48,6 +49,7 @@ struct FeedbackView: View {
                     }.padding(10.0)
             
                     }
+                
                 Button(action:{
                     feedback="average"
                 }) {

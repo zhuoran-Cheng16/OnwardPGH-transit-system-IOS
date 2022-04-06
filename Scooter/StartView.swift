@@ -12,32 +12,16 @@ struct StartView: View {
 
     var body: some View {
         VStack(alignment: .leading){
-            HStack {
-                Text("Map from data visualization")
-                    .font(.largeTitle)
-                    .foregroundColor(.black)
-            }
+            Text("Map from data visualization")
+                .font(.title)
+                .fontWeight(.heavy)
+                .foregroundColor(.black)
             MapView()
                 .padding(0.0)
                 .ignoresSafeArea(edges: .top)
-                .frame(height:150)
-            HStack {
-                Text("Map for bumpiness")
-                    .font(.largeTitle)
-                    .foregroundColor(.blue)
-                    .padding(.leading, 60.0)
-            }
-            Divider()
-            MapView()
-                .padding(0.0)
-                .ignoresSafeArea(edges: .top)
-                .frame(height:150)
-            HStack {
-                Text("Map for light")
-                    .font(.largeTitle)
-                    .foregroundColor(.blue)
-                    .padding(.leading, 60.0)
-            }
+                
+            
+            
 
             
 
