@@ -31,6 +31,7 @@ struct FeedbackView: View {
             HStack{
                 Button(action:{
                     feedback="very_bad"
+
                 }) {
                     HStack {
                         Text(button1)
