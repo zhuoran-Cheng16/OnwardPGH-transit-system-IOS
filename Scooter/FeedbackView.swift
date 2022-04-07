@@ -23,6 +23,7 @@ struct FeedbackView: View {
     @State var button3="😐"
     @State var button4="😍"
     @State private var feedback = ""
+    @State private var date = Date()
     var body: some View {
         VStack {
             Text("How was your trip?")
@@ -32,7 +33,7 @@ struct FeedbackView: View {
             HStack{
                 Button(action:{
                     feedback="very_bad"
-                    let parameters: [String: Any] = ["feedback": "very_bad"]
+                    let parameters: [String: Any] = ["user experience": "very_bad", "time": date]
                     AF.request("http://localhost:3000", method: .post, parameters: parameters)
                                 .response { response in
                                     print(response.response?.headers)
@@ -47,7 +48,7 @@ struct FeedbackView: View {
                 
                 Button(action:{
                     feedback="bad"
-                    let parameters: [String: Any] = ["feedback": "bad"]
+                    let parameters: [String: Any] = ["user experience": "bad", "time": date]
                     AF.request("http://localhost:3000", method: .post, parameters: parameters)
                                 .response { response in
                                     print(response.response?.headers)
@@ -63,7 +64,7 @@ struct FeedbackView: View {
                 
                 Button(action:{
                     feedback="average"
-                    let parameters: [String: Any] = ["feedback": "average"]
+                    let parameters: [String: Any] = ["user experience": "average", "time": date]
                     AF.request("http://localhost:3000", method: .post, parameters: parameters)
                                 .response { response in
                                     print(response.response?.headers)
@@ -77,7 +78,7 @@ struct FeedbackView: View {
                     }
                 Button(action:{
                     feedback="prefect"
-                    let parameters: [String: Any] = ["feedback": "perfect"]
+                    let parameters: [String: Any] = ["user experience": "perfect", "time": date]
                     AF.request("http://localhost:3000", method: .post, parameters: parameters)
                                 .response { response in
                                     print(response.response?.headers)
