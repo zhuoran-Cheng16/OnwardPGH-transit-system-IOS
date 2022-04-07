@@ -33,7 +33,7 @@ struct FeedbackView: View {
                 Button(action:{
                     feedback="very_bad"
                     let parameters: [String: Any] = ["feedback": "very_bad"]
-                    AF.request("http://172.26.50.22:3000", method: .post, parameters: parameters)
+                    AF.request("http://localhost:3000", method: .post, parameters: parameters)
                                 .response { response in
                                     print(response.response?.headers)
                             }                }) {
@@ -47,7 +47,12 @@ struct FeedbackView: View {
                 
                 Button(action:{
                     feedback="bad"
-                    AF.request("http://localhost:3000", method: .post)
+                    let parameters: [String: Any] = ["feedback": "bad"]
+                    AF.request("http://localhost:3000", method: .post, parameters: parameters)
+                                .response { response in
+                                    print(response.response?.headers)
+                            }
+                    
                 }) {
                     HStack {
                         Text(button2)
@@ -58,7 +63,11 @@ struct FeedbackView: View {
                 
                 Button(action:{
                     feedback="average"
-                    AF.request("http://localhost:3000", method: .post)
+                    let parameters: [String: Any] = ["feedback": "average"]
+                    AF.request("http://localhost:3000", method: .post, parameters: parameters)
+                                .response { response in
+                                    print(response.response?.headers)
+                            }
                 }) {
                     HStack {
                         Text(button3)
@@ -68,7 +77,11 @@ struct FeedbackView: View {
                     }
                 Button(action:{
                     feedback="prefect"
-                    AF.request("http://localhost:3000", method: .post)
+                    let parameters: [String: Any] = ["feedback": "perfect"]
+                    AF.request("http://localhost:3000", method: .post, parameters: parameters)
+                                .response { response in
+                                    print(response.response?.headers)
+                            }
                 }) {
                     HStack {
                         Text(button4)
