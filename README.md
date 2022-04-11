@@ -15,9 +15,9 @@ Course project for Rapid Prototyping of Computer System for [Team Personal Devic
 git clone {REPO_URL}
 
 # Create a new branch
-git checkout -b BRDS-10-<branch-name>
+git checkout -b RPP-10-<branch-name>
 # e.g.
-# git checkout -b BRDS-10-udpate-README'
+# git checkout -b RPP-10-udpate-README'
 
 # Addition Steps to connect to the remote repository:
 # Push local branch to remote
@@ -32,7 +32,7 @@ git branch -a
 # Commit changes to branch
 git commit -m "JIRA_NO <Summary of commit>"
 # e.g.
-# git checkout -b "BRDS-10 Add README.md"
+# git checkout -b "RPP-10 Add README.md"
 
 # Push to the branch with your name
 git push
@@ -40,7 +40,7 @@ git push
 
 # Pull request(PR)
 # Title: [JIRA_NO] description
-# e.g. title: [BRDS-10] Add Zitan Chen to team members in README.md
+# e.g. title: [RPP-10] Add Zitan Chen to team members in README.md
 # Content Format:
 # Description: Summary what you've done in the PR
 # Changelog: List the part you edit or change
