@@ -1,6 +1,6 @@
 # Rapid_SW_team
 Course project for Rapid Prototyping of Computer System for [Team Personal Devices - SW] (https://rapidprototyp-mak7891.slack.com/archives/C031VSUDHPU)
-
+first attempt
 | Team Member | Email |
 | :---: | :---: |
 | [@Zitan Chen](https://18-749fall2021.slack.com/archives/D02CPSL0UHG) | zitanchen@cmu.edu |
