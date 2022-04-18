@@ -32,12 +32,7 @@ struct FeedbackView: View {
                     .font(.largeTitle)
             HStack{
                 Button(action:{
-                    feedback="very_bad"
-                    let parameters: [String: Any] = ["user experience": "very_bad", "time": date]
-                    AF.request("http://localhost:3000", method: .post, parameters: parameters)
-                                .response { response in
-                                    print(response.response?.headers)
-                            }                }) {
+                    feedback="very_bad"}) {
                     HStack {
                         Text(button1)
                             .font(.largeTitle)
@@ -48,11 +43,6 @@ struct FeedbackView: View {
                 
                 Button(action:{
                     feedback="bad"
-                    let parameters: [String: Any] = ["user experience": "bad", "time": date]
-                    AF.request("http://localhost:3000", method: .post, parameters: parameters)
-                                .response { response in
-                                    print(response.response?.headers)
-                            }
                     
                 }) {
                     HStack {
@@ -64,11 +54,6 @@ struct FeedbackView: View {
                 
                 Button(action:{
                     feedback="average"
-                    let parameters: [String: Any] = ["user experience": "average", "time": date]
-                    AF.request("http://localhost:3000", method: .post, parameters: parameters)
-                                .response { response in
-                                    print(response.response?.headers)
-                            }
                 }) {
                     HStack {
                         Text(button3)
@@ -78,11 +63,6 @@ struct FeedbackView: View {
                     }
                 Button(action:{
                     feedback="prefect"
-                    let parameters: [String: Any] = ["user experience": "perfect", "time": date]
-                    AF.request("http://localhost:3000", method: .post, parameters: parameters)
-                                .response { response in
-                                    print(response.response?.headers)
-                            }
                 }) {
                     HStack {
                         Text(button4)

@@ -23,18 +23,32 @@ struct MapView: View {
     @State private var region = MKCoordinateRegion(
         center: CLLocationCoordinate2D(latitude: 40.4432, longitude: -79.9428),
         span: MKCoordinateSpan(latitudeDelta: 0.008, longitudeDelta: 0.008)
+    
     )
+    @State private var feedback = ""
 
     var body: some View {
+        
         Map(coordinateRegion: $region,
             showsUserLocation: true,
             annotationItems: cities) { city in
-            MapPin(coordinate: city.coordinate, tint: .red)
+            MapMarker(coordinate: city.coordinate, tint: .red)
                 }
             .accentColor(Color(.systemPink))
+            .onTapGesture(count: 1, perform: {
+                feedback="work"})
             
+        
+        if feedback != "" {
+            Text("Thanks for feedback!")
+                .fontWeight(.heavy)
+                    .foregroundColor(.blue)
+                    .font(.subheadline)
+        }
             }
+   
 }
+
 
 struct MapView_Previews: PreviewProvider {
     static var previews: some View {

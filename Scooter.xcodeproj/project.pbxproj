@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2511CEC0280E0FE80085AF4C /* InfraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2511CEBF280E0FE80085AF4C /* InfraViewController.swift */; };
+		2511CEC4280E109E0085AF4C /* InfraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2511CEC3280E109E0085AF4C /* InfraView.swift */; };
 		256B574227FCE920001FF7EE /* FeedbackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 256B574127FCE920001FF7EE /* FeedbackView.swift */; };
 		4202385327E8285F0042E988 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4202385227E8285F0042E988 /* Assets.xcassets */; };
 		4202385627E8285F0042E988 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4202385527E8285F0042E988 /* Preview Assets.xcassets */; };
@@ -43,6 +45,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2511CEBF280E0FE80085AF4C /* InfraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfraViewController.swift; sourceTree = "<group>"; };
+		2511CEC3280E109E0085AF4C /* InfraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfraView.swift; sourceTree = "<group>"; };
 		256B574127FCE920001FF7EE /* FeedbackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackView.swift; sourceTree = "<group>"; };
 		4202384B27E8285D0042E988 /* Scooter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Scooter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4202385227E8285F0042E988 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -118,7 +122,9 @@
 				4202388827E83FF90042E988 /* MapView.swift */,
 				4202388627E83FEC0042E988 /* LandmarksApp.swift */,
 				4202388027E83A9F0042E988 /* BusView.swift */,
+				2511CEBF280E0FE80085AF4C /* InfraViewController.swift */,
 				4202388427E83FDE0042E988 /* ContentView.swift */,
+				2511CEC3280E109E0085AF4C /* InfraView.swift */,
 				801C3FE727E9056900F9556C /* ParkView.swift */,
 				801C3FE927E908E300F9556C /* StartView.swift */,
 				4202388227E83CAC0042E988 /* WalkView.swift */,
@@ -296,8 +302,10 @@
 				4202388927E83FF90042E988 /* MapView.swift in Sources */,
 				256B574227FCE920001FF7EE /* FeedbackView.swift in Sources */,
 				4202387F27E835BB0042E988 /* MainView.swift in Sources */,
+				2511CEC4280E109E0085AF4C /* InfraView.swift in Sources */,
 				801C3FEA27E908E300F9556C /* StartView.swift in Sources */,
 				4202388527E83FDE0042E988 /* ContentView.swift in Sources */,
+				2511CEC0280E0FE80085AF4C /* InfraViewController.swift in Sources */,
 				4202388727E83FEC0042E988 /* LandmarksApp.swift in Sources */,
 				801C3FE827E9056900F9556C /* ParkView.swift in Sources */,
 				4202388127E83A9F0042E988 /* BusView.swift in Sources */,
