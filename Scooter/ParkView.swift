@@ -97,4 +97,3 @@ struct ParkView_Previews: PreviewProvider {
 
     }
 }
-
