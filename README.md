@@ -1,5 +1,5 @@
 # Rapid_SW_team
-Course project for Rapid Prototyping of Computer System for [Team Personal Devices - SW] (https://rapidprototyp-mak7891.slack.com/archives/C031VSUDHPU)
+Course project for Rapid Prototyping of Computer System for [Team Personal Devices - SW](https://rapidprototyp-mak7891.slack.com/archives/C031VSUDHPU)
 first attempt
 | Team Member | Email |
 | :---: | :---: |  
