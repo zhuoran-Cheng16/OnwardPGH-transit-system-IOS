@@ -28,16 +28,16 @@ struct ParkView: View {
                     }
                 }
                 VStack {
-                                NavigationLink(destination: FeedbackView(), isActive: self.$showDetail) { EmptyView() }
-                                Button(action: {
-                                    self.displayPopupMessage = true
-                                }) {Text("Alert and Navigate")}
-                                .alert(isPresented: $displayPopupMessage){
-                                    Alert(title: Text("Warning"), message: Text("This is a test"), dismissButton:
-                                        .default(Text("OK"), action: {self.showDetail = true})
-                                    )
-                                }
-                            }
+                    NavigationLink(destination: FeedbackView(), isActive: self.$showDetail) { EmptyView() }
+                    Button(action: {
+                        self.displayPopupMessage = true
+                    }) {Text("Trip Completed")}
+                    .alert(isPresented: $displayPopupMessage){
+                        Alert(title: Text("Warning"), message: Text("This is a test"), dismissButton:
+                            .default(Text("OK"), action: {self.showDetail = true})
+                        )
+                    }
+                }
                 MapView()
                     .ignoresSafeArea(edges: .top)
                     .frame(height: 189)
