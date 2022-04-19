@@ -8,42 +8,42 @@
 import SwiftUI
 
 struct MainView: View {
+    @State private var selection: String? = nil
 
     var body: some View {
-        TabView {
-            StartView()
-                .tabItem{
-                    Image(systemName: "house.fill")
-                    Text("Home")
+            VStack {
+            TabView {
+                StartView()
+                    .tabItem{
+                        Image(systemName: "house.fill")
+                        Text("Home")
+                    }
+                BusView()
+                    .tabItem{
+                        Image(systemName: "bus")
+                        Text("Bus")
+                    }
+                ContentView()
+                    .tabItem{
+                        Image(systemName: "scooter")
+                        Text("Scooter")
+                    }
+                WalkView()
+                    .tabItem{
+                        Image(systemName: "figure.walk")
+                        Text("Walk")
+                    }
+                ParkView()
+                    .tabItem{
+                        Image(systemName: "parkingsign")
+                        Text("Park")
+                    }
                 }
-            BusView()
-                .tabItem{
-                    Image(systemName: "bus")
-                    Text("Bus")
-                }
-            ContentView()
-                .tabItem{
-                    Image(systemName: "scooter")
-                    Text("Scooter")
-                }
-            WalkView()
-                .tabItem{
-                    Image(systemName: "figure.walk")
-                    Text("Walk")
-                }
-            ParkView()
-                .tabItem{
-                    Image(systemName: "parkingsign")
-                    Text("Park")
-                }
-            FeedbackView()
-                .tabItem{
-                    Image(systemName: "hand.thumbsup")
-                    Text("FeedBack")
-                }
+            }
+        }
     }
-}
-}
+
+
 
 struct MainView_Previews: PreviewProvider {
     static var previews: some View {

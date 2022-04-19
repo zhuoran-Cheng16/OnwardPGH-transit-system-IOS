@@ -11,7 +11,8 @@ struct ParkView: View {
     @State private var isDisplayed = true
     @State var location: String = ""
     @State var destination: String = ""
-
+    @State private var displayPopupMessage: Bool = false
+    @State var showDetail: Bool = false
     var body: some View {
         NavigationView {
             VStack {
@@ -26,6 +27,17 @@ struct ParkView: View {
                         TextField("Destination", text: $destination)
                     }
                 }
+                VStack {
+                                NavigationLink(destination: FeedbackView(), isActive: self.$showDetail) { EmptyView() }
+                                Button(action: {
+                                    self.displayPopupMessage = true
+                                }) {Text("Alert and Navigate")}
+                                .alert(isPresented: $displayPopupMessage){
+                                    Alert(title: Text("Warning"), message: Text("This is a test"), dismissButton:
+                                        .default(Text("OK"), action: {self.showDetail = true})
+                                    )
+                                }
+                            }
                 MapView()
                     .ignoresSafeArea(edges: .top)
                     .frame(height: 189)
@@ -89,6 +101,7 @@ struct ParkView: View {
             }
     }
 }
+
 struct ParkView_Previews: PreviewProvider {
     static var previews: some View {
         
