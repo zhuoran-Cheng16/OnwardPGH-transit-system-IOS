@@ -28,13 +28,13 @@ struct ParkView: View {
                     }
                 }
                 VStack {
-                    NavigationLink(destination: FeedbackView(), isActive: self.$showDetail) { EmptyView() }
+                    NavigationLink(destination: StartParkView(showDetail: $showDetail), isActive: self.$showDetail) { EmptyView() }
                     Button(action: {
                         self.displayPopupMessage = true
-                    }) {Text("Trip Completed")}
+                    }) {Text("Start Parking")}
                     .alert(isPresented: $displayPopupMessage){
-                        Alert(title: Text("Warning"), message: Text("This is a test"), dismissButton:
-                            .default(Text("OK"), action: {self.showDetail = true})
+                        Alert(title: Text("Parking"), message: Text("How long will you be parked in the lot?"), dismissButton:
+                            .default(Text("Submit Time"), action: {self.showDetail = true})
                         )
                     }
                 }

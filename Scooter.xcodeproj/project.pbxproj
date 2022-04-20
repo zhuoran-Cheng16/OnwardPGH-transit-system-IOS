@@ -21,6 +21,7 @@
 		4202388927E83FF90042E988 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4202388827E83FF90042E988 /* MapView.swift */; };
 		801C3FE827E9056900F9556C /* ParkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 801C3FE727E9056900F9556C /* ParkView.swift */; };
 		801C3FEA27E908E300F9556C /* StartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 801C3FE927E908E300F9556C /* StartView.swift */; };
+		97AF76CA2810A6F2000D5FD1 /* StartParkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97AF76C92810A6F2000D5FD1 /* StartParkView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +59,7 @@
 		4202388827E83FF90042E988 /* MapView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		801C3FE727E9056900F9556C /* ParkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkView.swift; sourceTree = "<group>"; };
 		801C3FE927E908E300F9556C /* StartView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartView.swift; sourceTree = "<group>"; };
+		97AF76C92810A6F2000D5FD1 /* StartParkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartParkView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +111,7 @@
 			isa = PBXGroup;
 			children = (
 				256B574127FCE920001FF7EE /* FeedbackView.swift */,
+				97AF76C92810A6F2000D5FD1 /* StartParkView.swift */,
 				4202388827E83FF90042E988 /* MapView.swift */,
 				4202388627E83FEC0042E988 /* LandmarksApp.swift */,
 				4202388027E83A9F0042E988 /* BusView.swift */,
@@ -287,6 +290,7 @@
 				4202388727E83FEC0042E988 /* LandmarksApp.swift in Sources */,
 				801C3FE827E9056900F9556C /* ParkView.swift in Sources */,
 				4202388127E83A9F0042E988 /* BusView.swift in Sources */,
+				97AF76CA2810A6F2000D5FD1 /* StartParkView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
