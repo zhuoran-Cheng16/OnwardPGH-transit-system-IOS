@@ -29,9 +29,12 @@ struct StartParkView: View {
                 Text("Submit Time Staying").font(.title)
             }
             .alert(isPresented: $displayPopupMessage){
-                Alert(title: Text("Parking"), message: Text("You have submitted that you will be parked in the lot for \(time/60) hours and \(time%60 != 0 ? time%60 : 0) minutes"), dismissButton:
-                    .default(Text("Ok"), action: {showDetail = false})
-                )
+                Alert(
+                    title: Text("Parking"),
+                    message: Text("You have submitted that you will be parked in the lot for \(time/60) hours and \(time%60 != 0 ? time%60 : 0) minutes"),
+                    primaryButton: Alert.Button.default(Text("Edit"), action: {}),
+                    secondaryButton: Alert.Button.cancel(Text("Confirm"), action: {showDetail = false})
+                    )
             }
         }
         .padding()
