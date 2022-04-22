@@ -28,12 +28,12 @@ struct ContentView: View {
                     }
                 }
             VStack {
-                NavigationLink(destination: FeedbackView(), isActive: self.$showDetail) { EmptyView() }
+                NavigationLink(destination: FeedbackView(showDetail: $showDetail), isActive: self.$showDetail) { EmptyView() }
                 Button(action: {
                     self.displayPopupMessage = true
                 }) {Text("Trip Completed")}
                 .alert(isPresented: $displayPopupMessage){
-                    Alert(title: Text("Warning"), message: Text("This is a test"), dismissButton:
+                    Alert(title: Text("Submit Feedback"), message: Text("Please submit your feedback on the next page."), dismissButton:
                         .default(Text("OK"), action: {self.showDetail = true})
                     )
                 }
