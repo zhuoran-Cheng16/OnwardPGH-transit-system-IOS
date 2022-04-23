@@ -16,16 +16,9 @@ struct StartView: View {
                 .font(.title)
                 .fontWeight(.heavy)
                 .foregroundColor(.black)
-            MapView()
+            OriginalMapView()
                 .padding(0.0)
-                .ignoresSafeArea(edges: .top)
-                
-            
-            
-
-            
-
-        };
+                .ignoresSafeArea(edges: .top)};
         
     }
 }
