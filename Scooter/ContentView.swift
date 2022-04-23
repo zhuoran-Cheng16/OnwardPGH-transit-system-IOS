@@ -1,5 +1,5 @@
 //
-//  WalkView.swift
+//  ContentView.swift
 //  Landmarks
 //
 //  Created by xinyue xie on 2022/3/19.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct WalkView: View {
+struct ContentView: View {
     @State private var isDisplayed = true
     @State var location: String = ""
     @State var destination: String = ""
@@ -26,14 +26,14 @@ struct WalkView: View {
                         TextField("Destination", text: $destination)
                     }
                 }
-                OriginalMapView()
+                MapView()
                     .ignoresSafeArea(edges: .top)
-                    .frame(height: 190)
+                    .frame(height: 185)
                 VStack(alignment: .leading) {
                     HStack {
-                        Image (systemName: "figure.walk")
+                        Image (systemName: "scooter")
                             .foregroundColor(.blue)
-                        Text("Walk Route")
+                        Text("Scooter Route")
                             .font(.subheadline)
                             .foregroundColor(.blue)
                     }
@@ -42,18 +42,18 @@ struct WalkView: View {
                         .font(.largeTitle)
                     HStack {
                         Spacer()
-                        Image(systemName: "figure.walk")
+                        Image(systemName: "scooter")
                             .padding(.trailing)
                             .font(.title)
                             .foregroundColor(.green)
-                        Text("30 Min")
+                        Text("12 Min")
                             .font(.title2)
                             .foregroundColor(.gray)
                     }
                     HStack {
                         Image (systemName: "checkmark.circle")
                             .foregroundColor(.green)
-                        Text("Smoother Route")
+                        Text("Smoother Route and light condition ok")
                             .font(.subheadline)
                             .foregroundColor(.green)
                     }
@@ -63,19 +63,21 @@ struct WalkView: View {
                     Text("Route 2")
                         .font(.largeTitle)
                     HStack{
-                        Image(systemName: "exclamationmark.circle")
-                            .foregroundColor(.red)
-                        Text("Faster but Little bumpy")
-                            .font(.subheadline)
-                            .foregroundColor(.red)
                         Spacer()
-                        Image(systemName: "figure.walk")
+                        Image(systemName: "scooter")
                             .padding(.trailing)
                             .font(.title)
                             .foregroundColor(.red)
-                        Text("26 Min")
+                        Text("10 Min")
                             .font(.title2)
                             .foregroundColor(.gray)
+                    }
+                    HStack {
+                        Image(systemName: "exclamationmark.circle")
+                            .foregroundColor(.red)
+                        Text("Faster and light condition ok but Little bumpy")
+                            .font(.subheadline)
+                            .foregroundColor(.red)
                     }
                     Divider()
                     
@@ -87,10 +89,10 @@ struct WalkView: View {
         }
     }
 }
-struct WalkView_Previews: PreviewProvider {
+struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         
-        WalkView()
+        ContentView()
             .previewDevice("iPhone 13 Pro")
         
     }

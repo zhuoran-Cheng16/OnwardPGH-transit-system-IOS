@@ -8,7 +8,9 @@
 import SwiftUI
 
 struct MainView: View {
-
+    
+    var tripTracker = TripTracker()
+    
     var body: some View {
         TabView {
             HomeView()
@@ -31,8 +33,8 @@ struct MainView: View {
                     Image(systemName: "parkingsign")
                     Text("Park")
                 }
+        }
     }
-}
 }
 
 struct MainView_Previews: PreviewProvider {
