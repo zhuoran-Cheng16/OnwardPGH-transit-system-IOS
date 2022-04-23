@@ -8,19 +8,25 @@
 import SwiftUI
 import MapKit
 
-struct MapView: View {
+struct MapView: UIViewRepresentable {
+    @EnvironmentObject var userLocation: locationManager
     @StateObject private var viewModel = MapViewModel()
     @State private var userTrackingMode: MapUserTrackingMode = .follow
-
-
-    var body: some View {
-        Map(coordinateRegion: $viewModel.region, showsUserLocation: true)
-            .accentColor(Color(.systemBlue))
-            .onAppear{
-                viewModel.checkIfLocationServicesEnabled()
-            }
+    
+    typealias UIViewType = MKMapView
+    
+    func makeUIView(context: Context) -> MKMapView {
+        return MKMapView()
     }
-           
+
+    func updateUIView(_ uiView: MKMapView, context: Context) {
+        uiView.showsUserLocation = true
+        uiView.showsScale = true
+        uiView.showsBuildings = false
+        uiView.showsTraffic = true
+        uiView.setRegion(viewModel.region, animated: true)
+        
+    }
 }
 
 struct MapView_Previews: PreviewProvider {

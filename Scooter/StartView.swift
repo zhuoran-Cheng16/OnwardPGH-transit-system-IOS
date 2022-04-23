@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct StartView: View {
-
+    @StateObject private var viewModel = MapViewModel()
 
     var body: some View {
         VStack(alignment: .leading){

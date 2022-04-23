@@ -11,107 +11,61 @@ struct BusView: View {
     @State private var isDisplayed = true
     @State var location: String = ""
     @State var destination: String = ""
+    @State private var showDetail = false
+    @StateObject private var viewModel = MapViewModel()
+    @EnvironmentObject var userLocation: locationManager
     var body: some View {
-        NavigationView {
-            VStack {
-                Form {
-                    HStack{
-                        Image (systemName: "circle")
-                            .foregroundColor(.gray)
-                        TextField("Current Location", text: $location)}
-                    HStack{
-                        Image (systemName: "mappin.and.ellipse")
-                            .foregroundColor(.gray)
-                        TextField("Destination", text: $destination)
-                    }
+
+            VStack(spacing: 0){
+                VStack(alignment: .leading, spacing: 0){
+                        HStack{
+                            Image (systemName: "circle")
+                                .foregroundColor(.blue)
+                            TextField("Current Location", text: $location)}
+                       HStack{
+                            Image (systemName: "mappin.and.ellipse")
+                               .foregroundColor(.red)
+                            TextField("Destination", text: $destination)}
+                                    
+                      }
+                        .textFieldStyle(RoundedBorderTextFieldStyle())
+                        .ignoresSafeArea(.all, edges: .bottom)
+                                .padding()
                     
-                }
-                MapView()
-                    .ignoresSafeArea(edges: .top)
-                    .frame(height: 170)
+                Divider()
+                ZStack{
+                   MapView()
+                    }.frame(height:500)
+                    .padding()
+               
                 VStack(alignment: .leading) {
-                    HStack {
-                        Image (systemName: "bus")
-                            .foregroundColor(.blue)
-                        Text("Bus Route")
-                            .font(.subheadline)
-                            .foregroundColor(.blue)
-                    }
-                    Divider()
-                    Text("61A")
-                        .font(.body)
-                    HStack {
-                        Spacer()
-                        Image(systemName: "figure.stand")
-                            .padding(.trailing)
-                            .font(.body)
-                            .foregroundColor(.green)
-                        Image(systemName: "figure.stand")
-                            .font(.body)
-                            .foregroundColor(.green)
-                        Text("6 Min")
-                            .font(.title2)
-                            .foregroundColor(.gray)
-                    }
-                    HStack {
-                        Image (systemName: "arrow.forward.circle.fill")
-                            .foregroundColor(.gray)
-                        Text("Downtown")
-                            .font(.subheadline)
-                            .foregroundColor(.secondary)
-                    }
-                    Text("Forbes Ave/Wightman")
-                        .font(.subheadline)
-                        .foregroundColor(.secondary)
-                    Text("         Also in 37 min & 1h")
-                        .font(.subheadline)
-                        .foregroundColor(.black)
-                    Divider()
+                        Button {
+                            showDetail.toggle()
+                            } label: {
+                                HStack {
+                                    Image (systemName: "bus")
+                                        .foregroundColor(.blue)
+                                    Text("Bus Route")
+                                        .font(.subheadline)
+                                        .foregroundColor(.blue)
+                                }
+                            }
                 }.padding()
-                VStack(alignment: .leading){
-                    Text("61B")
-                        .font(.body)
-                    HStack{
-                        Image(systemName: "exclamationmark.circle")
-                            .foregroundColor(.red)
-                        Text("Too many waiting")
-                            .font(.subheadline)
-                            .foregroundColor(.red)
-                        Spacer()
-                        Image(systemName: "figure.stand")
-                            .padding(.trailing)
-                            .font(.body)
-                            .foregroundColor(.red)
-                        Image(systemName: "figure.stand")
-                            .font(.body)
-                            .foregroundColor(.orange)
-                        Text("6 Min")
-                            .font(.title2)
-                            .foregroundColor(.gray)
-                    }
-                    HStack {
-                        Image (systemName: "arrow.forward.circle.fill")
-                            .foregroundColor(.gray)
-                        Text("Downtown")
-                            .font(.subheadline)
-                            .foregroundColor(.secondary)
-                    }
-                    Text("Forbes Ave/Wightman")
-                        .font(.subheadline)
-                        .foregroundColor(.secondary)
-                    Text("         Also in 37 min & 1h")
-                        .font(.subheadline)
-                        .foregroundColor(.black)
+                        .sheet(isPresented: $showDetail) {
+                            BusTable()
+                        }
                     Divider()
-                    
-                }.padding()
+ 
+            
+
+            
+            }
 
             }
-                    .navigationBarTitle("User Input")
-            }
-        
-    }
+    
 }
+
+
 struct BusView_Previews: PreviewProvider {
     static var previews: some View {
         
@@ -120,3 +74,5 @@ struct BusView_Previews: PreviewProvider {
 
     }
 }
+
+

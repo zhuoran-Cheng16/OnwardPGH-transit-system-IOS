@@ -11,7 +11,7 @@ struct WalkView: View {
     @State private var isDisplayed = true
     @State var location: String = ""
     @State var destination: String = ""
-
+    @StateObject private var viewModel = MapViewModel()
     var body: some View {
         NavigationView {
             VStack {
