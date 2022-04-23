@@ -70,7 +70,6 @@
 		4202388827E83FF90042E988 /* MapView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		801C3FE727E9056900F9556C /* ParkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkView.swift; sourceTree = "<group>"; };
 		801C3FE927E908E300F9556C /* StartView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartView.swift; sourceTree = "<group>"; };
-		E39CACFF27FE26D500752686 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,7 +122,6 @@
 		4202384D27E8285D0042E988 /* Scooter */ = {
 			isa = PBXGroup;
 			children = (
-				E39CACFF27FE26D500752686 /* Info.plist */,
 				256B574127FCE920001FF7EE /* FeedbackView.swift */,
 				4202388827E83FF90042E988 /* MapView.swift */,
 				2580AEB82813851700E56EE3 /* MapViewModel.swift */,
@@ -494,7 +492,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.test.aaaa---";
+				PRODUCT_BUNDLE_IDENTIFIER = org.18745.proj;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -525,7 +523,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.test.aaaa---";
+				PRODUCT_BUNDLE_IDENTIFIER = org.18745.proj;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
