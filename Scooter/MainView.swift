@@ -26,20 +26,10 @@ struct MainView: View {
                     Image(systemName: "scooter")
                     Text("Scooter")
                 }
-            WalkView()
-                .tabItem{
-                    Image(systemName: "figure.walk")
-                    Text("Walk")
-                }
             ParkView()
                 .tabItem{
                     Image(systemName: "parkingsign")
                     Text("Park")
-                }
-            FeedbackView()
-                .tabItem{
-                    Image(systemName: "hand.thumbsup")
-                    Text("FeedBack")
                 }
     }
 }
