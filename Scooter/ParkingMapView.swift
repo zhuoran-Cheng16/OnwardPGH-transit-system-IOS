@@ -8,7 +8,6 @@
 import SwiftUI
 import MapKit
 
-
 struct Parklot: Identifiable {
     let id = UUID()
     let coordinate: CLLocationCoordinate2D
@@ -19,22 +18,24 @@ struct ParkingMapView: View {
             Parklot(coordinate: .init(latitude: 40.4432, longitude: -79.9428)),
             Parklot(coordinate: .init(latitude: 40.447540, longitude: -79.943510))
         ]
+
     @State private var userTrackingMode: MapUserTrackingMode = .follow
-    @State private var region = MKCoordinateRegion(
-        center: CLLocationCoordinate2D(latitude: 40.4432, longitude: -79.9428),
-        span: MKCoordinateSpan(latitudeDelta: 0.008, longitudeDelta: 0.008)
+    @StateObject private var viewModel = MapViewModel()
     
-    )
     @State private var feedback = ""
 
     var body: some View {
         
-        Map(coordinateRegion: $region,
+        Map(coordinateRegion: $viewModel.region,
             showsUserLocation: true,
-            annotationItems: cities) { city in
-            MapMarker(coordinate: city.coordinate, tint: .red)
-                }
-            .accentColor(Color(.systemPink))
+            annotationItems: cities) { Parklot in
+            MapMarker(coordinate: Parklot.coordinate, tint: Color(.systemBlue))
+            }
+        
+            .ignoresSafeArea()
+            .accentColor(Color(.systemBlue))
+            .onAppear{
+                viewModel.checkIfLocationServicesEnabled()}
             .onTapGesture(count: 1, perform: {
                 feedback="work"})
             

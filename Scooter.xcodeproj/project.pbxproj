@@ -12,6 +12,7 @@
 		2511CEC6280E2E600085AF4C /* ParkingMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2511CEC5280E2E600085AF4C /* ParkingMapView.swift */; };
 		256B574227FCE920001FF7EE /* FeedbackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 256B574127FCE920001FF7EE /* FeedbackView.swift */; };
 		2580AEB7281353A500E56EE3 /* StartParkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2580AEB6281353A500E56EE3 /* StartParkView.swift */; };
+		2580AEB92813851700E56EE3 /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2580AEB82813851700E56EE3 /* MapViewModel.swift */; };
 		4202385327E8285F0042E988 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4202385227E8285F0042E988 /* Assets.xcassets */; };
 		4202385627E8285F0042E988 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4202385527E8285F0042E988 /* Preview Assets.xcassets */; };
 		4202386027E8285F0042E988 /* ScooterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4202385F27E8285F0042E988 /* ScooterTests.swift */; };
@@ -52,6 +53,7 @@
 		2511CEC5280E2E600085AF4C /* ParkingMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkingMapView.swift; sourceTree = "<group>"; };
 		256B574127FCE920001FF7EE /* FeedbackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackView.swift; sourceTree = "<group>"; };
 		2580AEB6281353A500E56EE3 /* StartParkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartParkView.swift; sourceTree = "<group>"; };
+		2580AEB82813851700E56EE3 /* MapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModel.swift; sourceTree = "<group>"; };
 		4202384B27E8285D0042E988 /* Scooter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Scooter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4202385227E8285F0042E988 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4202385527E8285F0042E988 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -124,6 +126,7 @@
 				E39CACFF27FE26D500752686 /* Info.plist */,
 				256B574127FCE920001FF7EE /* FeedbackView.swift */,
 				4202388827E83FF90042E988 /* MapView.swift */,
+				2580AEB82813851700E56EE3 /* MapViewModel.swift */,
 				2511CEC5280E2E600085AF4C /* ParkingMapView.swift */,
 				4202388627E83FEC0042E988 /* LandmarksApp.swift */,
 				2580AEB6281353A500E56EE3 /* StartParkView.swift */,
@@ -315,6 +318,7 @@
 				4202388527E83FDE0042E988 /* ContentView.swift in Sources */,
 				2511CEC0280E0FE80085AF4C /* InfraViewController.swift in Sources */,
 				4202388727E83FEC0042E988 /* LandmarksApp.swift in Sources */,
+				2580AEB92813851700E56EE3 /* MapViewModel.swift in Sources */,
 				801C3FE827E9056900F9556C /* ParkView.swift in Sources */,
 				4202388127E83A9F0042E988 /* BusView.swift in Sources */,
 			);
@@ -479,6 +483,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Scooter/Info.plist;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "This application need your current location.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -509,6 +514,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Scooter/Info.plist;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "This application need your current location.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
