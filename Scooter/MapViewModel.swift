@@ -34,12 +34,13 @@ final class MapViewModel: NSObject, ObservableObject, CLLocationManagerDelegate{
         }
         switch locationManager.authorizationStatus {
             case .notDetermined:
-                locationManager.requestAlwaysAuthorization()
+                locationManager.requestWhenInUseAuthorization()
             case .restricted:
                 print("Your location is restriceted due to parental controls")
             case .denied:
                 print("You had deny the location permission")
             case .authorizedAlways,.authorizedWhenInUse:
+            
             region = MKCoordinateRegion(center: locationManager.location!.coordinate, span: MapDetails.defaultSpan)
 
             @unknown default:
