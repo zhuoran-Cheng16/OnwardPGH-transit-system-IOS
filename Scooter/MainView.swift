@@ -11,7 +11,7 @@ struct MainView: View {
 
     var body: some View {
         TabView {
-            StartView()
+            HomeView()
                 .tabItem{
                     Image(systemName: "house.fill")
                     Text("Home")
@@ -21,7 +21,7 @@ struct MainView: View {
                     Image(systemName: "bus")
                     Text("Bus")
                 }
-            ContentView()
+            WalkView()
                 .tabItem{
                     Image(systemName: "scooter")
                     Text("Scooter")

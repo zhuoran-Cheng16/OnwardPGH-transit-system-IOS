@@ -7,14 +7,14 @@ import MapKit
 import SwiftUI
 import UIKit
 
-struct ContentView: View {
+struct MapView: View {
 
   @State private var directions: [String] = []
   @State private var showDirections = false
 
   var body: some View {
     VStack {
-      MapView(directions: $directions)
+        MapViewDirection(directions: $directions)
 
     }.sheet(isPresented: $showDirections, content: {
       VStack(spacing: 0) {
@@ -33,7 +33,7 @@ struct ContentView: View {
   }
 }
 
-struct MapView: UIViewRepresentable {
+struct MapViewDirection: UIViewRepresentable {
 
   typealias UIViewType = MKMapView
   @StateObject private var viewModel = MapViewModel()
@@ -46,17 +46,19 @@ struct MapView: UIViewRepresentable {
   func makeUIView(context: Context) -> MKMapView {
     let mapView = MKMapView()
     mapView.delegate = context.coordinator
+      mapView.showsUserLocation=true
 
     let region = viewModel.region
     mapView.setRegion(region, animated: true)
 
-    // NYC
-      let p1 = MKPlacemark(coordinate: CLLocationCoordinate2D(latitude: 40.44125742605699, longitude: -79.94370015796123))
+    //user location
+      let p1 = MKPlacemark(coordinate: region.center)
 
-    // Boston
+    // destination
     let p2 = MKPlacemark(coordinate: CLLocationCoordinate2D(latitude: 40.4512428846061, longitude: -79.95088134077386))
 
     let request = MKDirections.Request()
+      
     request.source = MKMapItem(placemark: p1)
     request.destination = MKMapItem(placemark: p2)
     request.transportType = .automobile
@@ -88,8 +90,8 @@ struct MapView: UIViewRepresentable {
   }
 }
 
-struct ContentView_Previews: PreviewProvider {
+struct MapView_Previews: PreviewProvider {
   static var previews: some View {
-    ContentView()
+      MapView()
   }
 }

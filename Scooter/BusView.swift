@@ -14,6 +14,8 @@ struct BusView: View {
     @State private var showDetail = false
     @StateObject private var viewModel = MapViewModel()
     @EnvironmentObject var userLocation: locationManager
+    @State private var directions: [String] = []
+    @State private var showDirections = false
     var body: some View {
 
             VStack(spacing: 0){
@@ -33,11 +35,13 @@ struct BusView: View {
                                 .padding()
                     
                 Divider()
-                ZStack{
-                   MapView()
-                    }.frame(height:500)
-                    .padding()
-               
+                ZStack {
+                  MapView()
+                }
+                      .frame(height:500)
+                      .padding()
+
+           
                 VStack(alignment: .leading) {
                         Button {
                             showDetail.toggle()

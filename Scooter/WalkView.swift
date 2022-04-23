@@ -26,7 +26,7 @@ struct WalkView: View {
                         TextField("Destination", text: $destination)
                     }
                 }
-                MapView()
+                OriginalMapView()
                     .ignoresSafeArea(edges: .top)
                     .frame(height: 190)
                 VStack(alignment: .leading) {

@@ -7,26 +7,27 @@
 
 import SwiftUI
 
-struct StartView: View {
+struct HomeView: View {
     @StateObject private var viewModel = MapViewModel()
 
     var body: some View {
         VStack(alignment: .leading){
-            Text("Map from data visualization")
-                .font(.title)
-                .fontWeight(.heavy)
-                .foregroundColor(.black)
+            Text("Home Page")
+                .font(.custom("Georgia", size: 24, relativeTo: .title))
+                .padding()
             OriginalMapView()
                 .padding(0.0)
-                .ignoresSafeArea(edges: .top)};
+                .ignoresSafeArea(edges: .top)}
+                .onAppear{
+                    viewModel.checkIfLocationServicesEnabled()};
         
     }
 }
 
-struct StartView_Previews: PreviewProvider {
+struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
         
-        StartView()
+        HomeView()
             .previewDevice("iPhone 13 Pro")
 
     }
