@@ -11,7 +11,7 @@ struct ContentView: View {
     @State private var isDisplayed = true
     @State var location: String = ""
     @State var destination: String = ""
-
+    
     var body: some View {
         NavigationView {
             VStack {
@@ -82,11 +82,11 @@ struct ContentView: View {
                     Divider()
                     
                 }.padding()
-
+                
             }
-                .navigationBarTitle("User Input")
+            .navigationBarTitle("User Input")
             
-            }
+        }
     }
 }
 struct ContentView_Previews: PreviewProvider {
@@ -94,6 +94,6 @@ struct ContentView_Previews: PreviewProvider {
         
         ContentView()
             .previewDevice("iPhone 13 Pro")
-
+        
     }
 }

@@ -11,7 +11,7 @@ struct WalkView: View {
     @State private var isDisplayed = true
     @State var location: String = ""
     @State var destination: String = ""
-
+    
     var body: some View {
         NavigationView {
             VStack {
@@ -80,11 +80,11 @@ struct WalkView: View {
                     Divider()
                     
                 }.padding()
-
+                
             }
-                .navigationBarTitle("User Input")
+            .navigationBarTitle("User Input")
             
-            }
+        }
     }
 }
 struct WalkView_Previews: PreviewProvider {
@@ -92,6 +92,6 @@ struct WalkView_Previews: PreviewProvider {
         
         WalkView()
             .previewDevice("iPhone 13 Pro")
-
+        
     }
 }

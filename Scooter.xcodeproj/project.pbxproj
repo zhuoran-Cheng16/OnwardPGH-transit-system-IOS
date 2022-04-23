@@ -27,6 +27,7 @@
 		800706B127FE22E900EC42E1 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 800706B027FE22E900EC42E1 /* Alamofire */; };
 		801C3FE827E9056900F9556C /* ParkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 801C3FE727E9056900F9556C /* ParkView.swift */; };
 		801C3FEA27E908E300F9556C /* StartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 801C3FE927E908E300F9556C /* StartView.swift */; };
+		80FE60DC2813BFDE00D56BCB /* TripTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80FE60DB2813BFDE00D56BCB /* TripTracker.swift */; };
 		E39CACFE27FE23BD00752686 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = E39CACFD27FE23BD00752686 /* Alamofire */; };
 /* End PBXBuildFile section */
 
@@ -70,6 +71,7 @@
 		4202388827E83FF90042E988 /* MapView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		801C3FE727E9056900F9556C /* ParkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkView.swift; sourceTree = "<group>"; };
 		801C3FE927E908E300F9556C /* StartView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartView.swift; sourceTree = "<group>"; };
+		80FE60DB2813BFDE00D56BCB /* TripTracker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripTracker.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +124,7 @@
 		4202384D27E8285D0042E988 /* Scooter */ = {
 			isa = PBXGroup;
 			children = (
+				80FE60DB2813BFDE00D56BCB /* TripTracker.swift */,
 				256B574127FCE920001FF7EE /* FeedbackView.swift */,
 				4202388827E83FF90042E988 /* MapView.swift */,
 				2580AEB82813851700E56EE3 /* MapViewModel.swift */,
@@ -316,6 +319,7 @@
 				4202388527E83FDE0042E988 /* ContentView.swift in Sources */,
 				2511CEC0280E0FE80085AF4C /* InfraViewController.swift in Sources */,
 				4202388727E83FEC0042E988 /* LandmarksApp.swift in Sources */,
+				80FE60DC2813BFDE00D56BCB /* TripTracker.swift in Sources */,
 				2580AEB92813851700E56EE3 /* MapViewModel.swift in Sources */,
 				801C3FE827E9056900F9556C /* ParkView.swift in Sources */,
 				4202388127E83A9F0042E988 /* BusView.swift in Sources */,

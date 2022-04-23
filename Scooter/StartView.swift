@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct StartView: View {
-
-
+    
+    
     var body: some View {
         VStack(alignment: .leading){
             Text("Map from data visualization")
@@ -19,12 +19,12 @@ struct StartView: View {
             MapView()
                 .padding(0.0)
                 .ignoresSafeArea(edges: .top)
-                
             
             
-
             
-
+            
+            
+            
         };
         
     }
@@ -35,6 +35,6 @@ struct StartView_Previews: PreviewProvider {
         
         StartView()
             .previewDevice("iPhone 13 Pro")
-
+        
     }
 }
