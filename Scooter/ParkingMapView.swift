@@ -32,7 +32,7 @@ struct ParkingMapView: View {
             MapMarker(coordinate: Parklot.coordinate, tint: Color(.systemBlue))
             }
         
-            .ignoresSafeArea()
+            .frame(height: 480)
             .accentColor(Color(.systemBlue))
             .onAppear{
                 viewModel.checkIfLocationServicesEnabled()}
@@ -41,11 +41,13 @@ struct ParkingMapView: View {
             
         
         if feedback != "" {
-            VStack(alignment: .leading){
+            ZStack{
+                VStack(alignment: .leading){
                 Text("Parking area 2")
                     .font(.largeTitle)
+      
                 HStack{
-                    Spacer()
+                
                     Image(systemName: "parkingsign")
                         .padding(.trailing)
                         .font(.title)
@@ -54,6 +56,7 @@ struct ParkingMapView: View {
                         .font(.title2)
                         .foregroundColor(.gray)
                 }
+             
                 HStack {
                     Image(systemName: "checkmark.circle")
                         .foregroundColor(.green)
@@ -61,10 +64,19 @@ struct ParkingMapView: View {
                         .font(.subheadline)
                         .foregroundColor(.green)
                 }
-                Divider()
+                }.padding()
+               
                 
-            }.padding()
-        }
+            }
+                .overlay(
+                        Rectangle()
+                            .stroke(Color.green, lineWidth: 2))
+                .background(Color.white)
+                .padding(.top, 350)
+                .frame(height:100)
+                
+        
+                        }
             }
    
 }
