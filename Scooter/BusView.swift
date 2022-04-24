@@ -79,4 +79,3 @@ struct BusView_Previews: PreviewProvider {
     }
 }
 
-

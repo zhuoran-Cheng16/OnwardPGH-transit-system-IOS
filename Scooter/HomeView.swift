@@ -1,10 +1,9 @@
 //
-//  StartView.swift
+//  HomeView.swift
 //  Scooter
 //
-//  Created by 吴祎凡 on 3/21/22.
+//  Created by 然 on 4/23/22.
 //
-
 import SwiftUI
 
 struct HomeView: View {
