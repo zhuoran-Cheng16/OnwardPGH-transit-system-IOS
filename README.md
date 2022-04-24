@@ -5,7 +5,7 @@ first attempt
 | :---: | :---: |  
 | [@Zitan Chen](https://18-749fall2021.slack.com/archives/D02CPSL0UHG) | zitanchen@cmu.edu |
 | [@Zhuoran Cheng](https://18-749fall2021.slack.com/archives/D02C979QJJ3) |zcheng3@andrew.cmu.edu|
-| [@Xinyue Xie]
+| [@Xinyue Xie] | xinyuex@andrew.cmu.edu |
 | [@Alexandra Poltorak] | apoltora@andrew.cmu.edu |
 | [@Yifan Wu]
 
