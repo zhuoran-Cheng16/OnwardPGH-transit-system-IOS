@@ -9,7 +9,6 @@ import SwiftUI
 
 struct MainView: View {
     
-    var tripTracker = TripTracker()
     
     var body: some View {
         TabView {

@@ -250,7 +250,7 @@ struct FeedbackView: View {
         ]
 
         // JSON Body
-        let body: [String : Any] = [
+        let body: [String : String] = [
             "reaction": reaction,
             "reason": reason,
             "comments": comments

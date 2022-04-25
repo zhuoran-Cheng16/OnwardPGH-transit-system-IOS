@@ -61,7 +61,7 @@ struct ContentView: View {
                 .frame(height: 480)
                 .padding()
         Button(action: {
-//            started = true
+            TripTracker.singleton.startTrip()
         }) {
             HStack {
                 Image (systemName: "checkmark.circle.fill")
@@ -84,6 +84,7 @@ struct ContentView: View {
           ) { EmptyView() }
           Button(action: {
             self.displayPopupMessage = true
+            TripTracker.singleton.endTrip()
           }) {
               HStack {
                   Image (systemName: "checkmark.circle.fill")
