@@ -244,29 +244,22 @@ struct FeedbackView: View {
 //         post http://54.208.68.184/api/feedbacks/
 //         */
 //
-//        // Add Headers
-//        let headers = [
-//            "Content-Type":"application/json; charset=utf-8",
-//        ]
-//
-//        // JSON Body
-//        let body: [String : Any] = [
-//            "reaction": reaction,
-//            "reason": reason,
-//            "comments": comments
-//        ]
-//
-//        // Fetch Request
-//        Alamofire.request("http://54.208.68.184/api/feedbacks/", method: .post, parameters: body, encoding: JSONEncoding.default, headers: headers)
-//            .validate(statusCode: 200..<300)
-//            .responseJSON { response in
-//                if (response.result.error == nil) {
-//                    debugPrint("HTTP Response Body: \(response.data)")
-//                }
-//                else {
-//                    debugPrint("HTTP Request failed: \(response.result.error)")
-//                }
-//            }
+        // Add Headers
+        let headers: HTTPHeaders = [
+            "Content-Type":"application/json; charset=utf-8",
+        ]
+
+        // JSON Body
+        let body: [String : Any] = [
+            "reaction": reaction,
+            "reason": reason,
+            "comments": comments
+        ]
+
+        // Fetch Request
+        AF.request("http://54.208.68.184/api/feedbacks/", method: .post, parameters: body, encoding: JSONEncoding.default, headers: headers).response { response in
+                debugPrint(response)
+        }
     }
 }
 
