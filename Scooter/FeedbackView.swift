@@ -32,6 +32,14 @@ struct FeedbackView: View {
     @State var missingFeedbackText = false
     @State var presentingDone = false
     
+    @State var colorRed = Color.red
+    @State var colorBlue = Color.blue
+    
+    @State var hills = false
+    @State var bumps = false
+    @State var construction = false
+    @State var roadClosed = false
+    
     var body: some View {
         VStack {
             Text("How was your trip?")
@@ -103,12 +111,71 @@ struct FeedbackView: View {
             if textFieldOn {
                 VStack {
                     HStack { // top two buttons
-                        Button("Bumps", action: {discomfortFeedbackCollected = true})
-                        Button("Hills", action: {discomfortFeedbackCollected = true})
+                        Button(action:{
+                            discomfortFeedbackCollected = true
+                            bumps = true
+                            construction = false
+                            roadClosed = false
+                            hills = false
+                        }) {
+                            HStack {
+                            Text("Bumps")
+                            Image(systemName: "rectangle.roundedtop.fill")
+                            }
+                            .padding()
+                                .foregroundColor(.white)
+                                .background(bumps ? colorRed : colorBlue)
+                                .cornerRadius(40)
+                        }
+                        
+                        Button(action: {
+                            discomfortFeedbackCollected = true
+                            bumps = false
+                            construction = false
+                            roadClosed = false
+                            hills = true
+                        }) {
+                            HStack {
+                            Text("Hills")
+                            Image(systemName: "seal.fill")
+                            }
+                            .padding()
+                                .foregroundColor(.white)
+                                .background(hills ? colorRed : colorBlue)
+                                .cornerRadius(40)
+                        }
                     }
                     HStack { // bottom two buttons
-                        Button("Construction", action: {discomfortFeedbackCollected = true})
-                        Button("Road Closure", action: {discomfortFeedbackCollected = true})
+                        Button(action: {
+                            discomfortFeedbackCollected = true
+                            bumps = false
+                            construction = true
+                            roadClosed = false
+                            hills = false
+                        }) {
+                            HStack {
+                            Text("Construction")
+                            Image(systemName: "gearshape.fill")
+                            }.padding()
+                                .foregroundColor(.white)
+                                .background(construction ? colorRed : colorBlue)
+                                .cornerRadius(40)
+                        }
+                        Button(action: {
+                            discomfortFeedbackCollected = true
+                            bumps = false
+                            construction = false
+                            roadClosed = true
+                            hills = false
+                        }) {
+                            HStack {
+                            Text("Road Closure")
+                            Image(systemName: "hand.raised.fill")
+                            }.padding()
+                                .foregroundColor(.white)
+                                .background(roadClosed ? colorRed : colorBlue)
+                                .cornerRadius(40)
+                        }
                     }
                 }
             }
