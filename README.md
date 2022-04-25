@@ -11,24 +11,24 @@ first attempt
 
 ## Project Introduction 
 
-###Main Page:<br> 
+### Main Page:<br> 
 
 Get Permission            |  Home Page
 :-------------------------:|:-------------------------:
 ![alt text](https://github.com/zhuoran-Cheng16/Rapid_SW_team/blob/main/IMG/home.png?raw=true) |  ![alt text](https://github.com/zhuoran-Cheng16/Rapid_SW_team/blob/main/IMG/home1.png?raw=true)
 
 
-###Bus Page:<br>
+### Bus Page:<br>
 Main page             |  Bus Route
 :-------------------------:|:-------------------------:
 ![alt text](https://github.com/zhuoran-Cheng16/Rapid_SW_team/blob/main/IMG/bus.png?raw=true)  |  ![alt text](https://github.com/zhuoran-Cheng16/Rapid_SW_team/blob/main/IMG/bus1.png?raw=true)
 
-###Ride Page:<br>
+### Ride Page:<br>
 Main page             |  Feedback page
 :-------------------------:|:-------------------------:
 ![alt text](https://github.com/zhuoran-Cheng16/Rapid_SW_team/blob/main/IMG/ride.png?raw=true)  |  ![alt text](https://github.com/zhuoran-Cheng16/Rapid_SW_team/blob/main/IMG/ride1.png?raw=true)
 
-###Park Page:<br>
+### Park Page:<br>
 Main page             |  Parking Time page
 :-------------------------:|:-------------------------:
 ![alt text](https://github.com/zhuoran-Cheng16/Rapid_SW_team/blob/main/IMG/park.png?raw=true)  |  ![alt text](https://github.com/zhuoran-Cheng16/Rapid_SW_team/blob/main/IMG/park1.png?raw=true)
