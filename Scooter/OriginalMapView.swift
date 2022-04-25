@@ -24,6 +24,7 @@ struct OriginalMapView: UIViewRepresentable {
         uiView.showsScale = true
         uiView.showsBuildings = false
         uiView.showsTraffic = true
+        uiView.isRotateEnabled=false
         uiView.setRegion(viewModel.region, animated: true)
         
     }

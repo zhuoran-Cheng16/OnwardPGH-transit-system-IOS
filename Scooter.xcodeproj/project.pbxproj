@@ -11,6 +11,8 @@
 		250EF4392814CFD600BBAD92 /* OriginalMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 250EF4382814CFD600BBAD92 /* OriginalMapView.swift */; };
 		2511CEC6280E2E600085AF4C /* ParkingMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2511CEC5280E2E600085AF4C /* ParkingMapView.swift */; };
 		2547854028165EEE005A5EE7 /* test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2547853F28165EEE005A5EE7 /* test.swift */; };
+		2547854228166782005A5EE7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2547854128166782005A5EE7 /* ContentView.swift */; };
+		254785442816679B005A5EE7 /* ScooterMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 254785432816679B005A5EE7 /* ScooterMapView.swift */; };
 		256B574227FCE920001FF7EE /* FeedbackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 256B574127FCE920001FF7EE /* FeedbackView.swift */; };
 		2580AEB7281353A500E56EE3 /* StartParkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2580AEB6281353A500E56EE3 /* StartParkView.swift */; };
 		2580AEB92813851700E56EE3 /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2580AEB82813851700E56EE3 /* MapViewModel.swift */; };
@@ -23,7 +25,6 @@
 		4202386C27E8285F0042E988 /* ScooterUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4202386B27E8285F0042E988 /* ScooterUITestsLaunchTests.swift */; };
 		4202387F27E835BB0042E988 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4202387E27E835BB0042E988 /* MainView.swift */; };
 		4202388127E83A9F0042E988 /* BusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4202388027E83A9F0042E988 /* BusView.swift */; };
-		4202388327E83CAC0042E988 /* WalkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4202388227E83CAC0042E988 /* WalkView.swift */; };
 		4202388727E83FEC0042E988 /* LandmarksApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4202388627E83FEC0042E988 /* LandmarksApp.swift */; };
 		4202388927E83FF90042E988 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4202388827E83FF90042E988 /* MapView.swift */; };
 		800706B127FE22E900EC42E1 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 800706B027FE22E900EC42E1 /* Alamofire */; };
@@ -55,6 +56,8 @@
 		250EF4382814CFD600BBAD92 /* OriginalMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OriginalMapView.swift; sourceTree = "<group>"; };
 		2511CEC5280E2E600085AF4C /* ParkingMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkingMapView.swift; sourceTree = "<group>"; };
 		2547853F28165EEE005A5EE7 /* test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = test.swift; sourceTree = "<group>"; };
+		2547854128166782005A5EE7 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		254785432816679B005A5EE7 /* ScooterMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScooterMapView.swift; sourceTree = "<group>"; };
 		256B574127FCE920001FF7EE /* FeedbackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackView.swift; sourceTree = "<group>"; };
 		2580AEB6281353A500E56EE3 /* StartParkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartParkView.swift; sourceTree = "<group>"; };
 		2580AEB82813851700E56EE3 /* MapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModel.swift; sourceTree = "<group>"; };
@@ -70,7 +73,6 @@
 		4202386B27E8285F0042E988 /* ScooterUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScooterUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		4202387E27E835BB0042E988 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		4202388027E83A9F0042E988 /* BusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusView.swift; sourceTree = "<group>"; };
-		4202388227E83CAC0042E988 /* WalkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkView.swift; sourceTree = "<group>"; };
 		4202388627E83FEC0042E988 /* LandmarksApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LandmarksApp.swift; sourceTree = "<group>"; };
 		4202388827E83FF90042E988 /* MapView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		801C3FE727E9056900F9556C /* ParkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkView.swift; sourceTree = "<group>"; };
@@ -143,8 +145,9 @@
 				2580AEBA2813B3B700E56EE3 /* BusTable.swift */,
 				801C3FE727E9056900F9556C /* ParkView.swift */,
 				801C3FE927E908E300F9556C /* StartView.swift */,
-				4202388227E83CAC0042E988 /* WalkView.swift */,
 				4202387E27E835BB0042E988 /* MainView.swift */,
+				2547854128166782005A5EE7 /* ContentView.swift */,
+				254785432816679B005A5EE7 /* ScooterMapView.swift */,
 				4202385227E8285F0042E988 /* Assets.xcassets */,
 				4202385427E8285F0042E988 /* Preview Content */,
 			);
@@ -316,12 +319,13 @@
 			files = (
 				2580AEC12813E2C200E56EE3 /* locationManager.swift in Sources */,
 				2547854028165EEE005A5EE7 /* test.swift in Sources */,
-				4202388327E83CAC0042E988 /* WalkView.swift in Sources */,
 				4202388927E83FF90042E988 /* MapView.swift in Sources */,
 				250EF4372814CFA000BBAD92 /* HomeView.swift in Sources */,
 				256B574227FCE920001FF7EE /* FeedbackView.swift in Sources */,
+				254785442816679B005A5EE7 /* ScooterMapView.swift in Sources */,
 				4202387F27E835BB0042E988 /* MainView.swift in Sources */,
 				2511CEC6280E2E600085AF4C /* ParkingMapView.swift in Sources */,
+				2547854228166782005A5EE7 /* ContentView.swift in Sources */,
 				2580AEB7281353A500E56EE3 /* StartParkView.swift in Sources */,
 				2580AEBB2813B3B700E56EE3 /* BusTable.swift in Sources */,
 				801C3FEA27E908E300F9556C /* StartView.swift in Sources */,

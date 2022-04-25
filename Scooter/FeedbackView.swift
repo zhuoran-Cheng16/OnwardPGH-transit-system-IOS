@@ -7,6 +7,8 @@
 
 import SwiftUI
 import Alamofire
+
+
 struct GrowingButton: ButtonStyle {
     func makeBody(configuration: Configuration) -> some View {
         configuration.label
@@ -23,7 +25,24 @@ struct FeedbackView: View {
     @State var button3="😐"
     @State var button4="😍"
     @State private var feedback = ""
-    @State private var date = Date()
+    @State var textFieldOn = false
+    @State var comment = ""
+    @State var commentSubmitted = false
+    @Binding var showDetail: Bool
+    @State var showThanksAlert = false
+    
+    @State var discomfortFeedbackCollected = false
+    @State var missingFeedbackText = false
+    @State var presentingDone = false
+    
+    @State var colorRed = Color.red
+    @State var colorBlue = Color.blue
+    
+    @State var hills = false
+    @State var bumps = false
+    @State var construction = false
+    @State var roadClosed = false
+    
     var body: some View {
         VStack {
             Text("How was your trip?")
@@ -32,7 +51,10 @@ struct FeedbackView: View {
                     .font(.largeTitle)
             HStack{
                 Button(action:{
-                    feedback="very_bad"}) {
+                    feedback="very_bad"
+                    textFieldOn = true
+                    
+                }) {
                     HStack {
                         Text(button1)
                             .font(.largeTitle)
@@ -43,7 +65,7 @@ struct FeedbackView: View {
                 
                 Button(action:{
                     feedback="bad"
-                    
+                    textFieldOn = true
                 }) {
                     HStack {
                         Text(button2)
@@ -54,6 +76,7 @@ struct FeedbackView: View {
                 
                 Button(action:{
                     feedback="average"
+                    textFieldOn = true
                 }) {
                     HStack {
                         Text(button3)
@@ -63,6 +86,7 @@ struct FeedbackView: View {
                     }
                 Button(action:{
                     feedback="prefect"
+                    textFieldOn = true
                 }) {
                     HStack {
                         Text(button4)
@@ -71,15 +95,129 @@ struct FeedbackView: View {
            
                     }
                 }.buttonStyle(GrowingButton())
+                .padding()
             if feedback != "" {
-                Text(getResponseWithEmoji(feedback))
-                    .fontWeight(.heavy)
-                        .foregroundColor(.red)
-                        .font(.subheadline)
-                Text("Thanks for feedback!")
-                    .fontWeight(.heavy)
-                        .foregroundColor(.blue)
-                        .font(.subheadline)
+                HStack {
+                    Text("You have selected: ")
+                        .fontWeight(.heavy)
+                            .foregroundColor(.blue)
+                            .font(.subheadline)
+                    Text(getResponseWithEmoji(feedback))
+                        .fontWeight(.heavy)
+                            .foregroundColor(.red)
+                            .font(.subheadline)
+                            .padding()
+                }
+            }
+            
+            //////////////////////// INSERT 4 BUTTONS OF WHY TRIP WAS BAD HERE :: START ////////////////////////
+            if textFieldOn {
+                VStack {
+                    HStack { // top two buttons
+                        Button(action:{
+                            discomfortFeedbackCollected = true
+                            bumps = true
+                            construction = false
+                            roadClosed = false
+                            hills = false
+                        }) {
+                            HStack {
+                            Text("Bumps")
+                            Image(systemName: "rectangle.roundedtop.fill")
+                            }
+                            .padding()
+                                .foregroundColor(.white)
+                                .background(bumps ? colorRed : colorBlue)
+                                .cornerRadius(40)
+                        }
+                        
+                        Button(action: {
+                            discomfortFeedbackCollected = true
+                            bumps = false
+                            construction = false
+                            roadClosed = false
+                            hills = true
+                        }) {
+                            HStack {
+                            Text("Hills")
+                            Image(systemName: "seal.fill")
+                            }
+                            .padding()
+                                .foregroundColor(.white)
+                                .background(hills ? colorRed : colorBlue)
+                                .cornerRadius(40)
+                        }
+                    }
+                    HStack { // bottom two buttons
+                        Button(action: {
+                            discomfortFeedbackCollected = true
+                            bumps = false
+                            construction = true
+                            roadClosed = false
+                            hills = false
+                        }) {
+                            HStack {
+                            Text("Construction")
+                            Image(systemName: "gearshape.fill")
+                            }.padding()
+                                .foregroundColor(.white)
+                                .background(construction ? colorRed : colorBlue)
+                                .cornerRadius(40)
+                        }
+                        Button(action: {
+                            discomfortFeedbackCollected = true
+                            bumps = false
+                            construction = false
+                            roadClosed = true
+                            hills = false
+                        }) {
+                            HStack {
+                            Text("Road Closure")
+                            Image(systemName: "hand.raised.fill")
+                            }.padding()
+                                .foregroundColor(.white)
+                                .background(roadClosed ? colorRed : colorBlue)
+                                .cornerRadius(40)
+                        }
+                    }
+                }
+            }
+            
+            //////////////////////// INSERT 4 BUTTONS OF WHY TRIP WAS BAD HERE :: END ////////////////////////
+            
+            
+            if textFieldOn && discomfortFeedbackCollected {
+                VStack {
+                    TextField("Please write any additional comments here", text: $comment)
+                        .multilineTextAlignment(.center)
+                    Button("Submit", action: {
+                        commentSubmitted = true
+                        showThanksAlert = true
+                        presentingDone = showThanksAlert && textFieldOn && discomfortFeedbackCollected
+                    })
+                    .alert(isPresented: $showThanksAlert) {
+                            return Alert(title: Text("Thank you for submitting your feedback!"),
+                                dismissButton:
+                                .default(Text("Done"),
+                                action: {
+                                        sendPostFeedbackAwsRequest(
+                                            reaction: getResponseWithEmoji(feedback),
+                                            reason: construction ? "Construction" : // if construction, construction. else...
+                                                (hills ? "Hills" : // if hills, hills. else ...
+                                                    (roadClosed ? "Road Closed" : "Bumps")), // if road closed, road closed. else bumps
+                                            comments: comment)
+                                        showDetail = false
+                                })
+                            )
+                        
+                        }
+                    }
+                }
+            if missingFeedbackText {
+                Text("Missing either reaction to trip or reason for discomfort on trip!")
+                    .foregroundColor(.red)
+                    .font(.subheadline)
+                    .multilineTextAlignment(.center)
             }
             
         }
@@ -97,13 +235,43 @@ struct FeedbackView: View {
         default:
             return ""
         }
-
-
         }
-}
-
-struct FeedbackView_Previews: PreviewProvider {
-    static var previews: some View {
-        FeedbackView().previewDevice("iPhone 13 Pro")
+    
+    
+    func sendPostFeedbackAwsRequest(reaction: String, reason: String, comments: String) {
+//        /**
+//         Post Feedback AWS
+//         post http://54.208.68.184/api/feedbacks/
+//         */
+//
+//        // Add Headers
+//        let headers = [
+//            "Content-Type":"application/json; charset=utf-8",
+//        ]
+//
+//        // JSON Body
+//        let body: [String : Any] = [
+//            "reaction": reaction,
+//            "reason": reason,
+//            "comments": comments
+//        ]
+//
+//        // Fetch Request
+//        Alamofire.request("http://54.208.68.184/api/feedbacks/", method: .post, parameters: body, encoding: JSONEncoding.default, headers: headers)
+//            .validate(statusCode: 200..<300)
+//            .responseJSON { response in
+//                if (response.result.error == nil) {
+//                    debugPrint("HTTP Response Body: \(response.data)")
+//                }
+//                else {
+//                    debugPrint("HTTP Request failed: \(response.result.error)")
+//                }
+//            }
     }
 }
+
+//struct FeedbackView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        FeedbackView().previewDevice("iPhone 13 Pro")
+//    }
+//}

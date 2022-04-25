@@ -23,10 +23,10 @@ struct MainView: View {
                     Image(systemName: "bus")
                     Text("Bus")
                 }
-            WalkView()
+            ContentView()
                 .tabItem{
                     Image(systemName: "scooter")
-                    Text("Scooter")
+                    Text("Ride")
                 }
             ParkView()
                 .tabItem{

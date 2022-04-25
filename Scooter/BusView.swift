@@ -17,7 +17,7 @@ struct BusView: View {
     @State private var directions: [String] = []
     @State private var showDirections = false
     var body: some View {
-
+        NavigationView{
             VStack(spacing: 0){
                 VStack(alignment: .leading, spacing: 0){
                         HStack{
@@ -29,16 +29,18 @@ struct BusView: View {
                                .foregroundColor(.red)
                             TextField("Destination", text: $destination)}
                                     
-                      }
+                }
+                .ignoresSafeArea(.all, edges: .bottom)
+                .padding()
                         .textFieldStyle(RoundedBorderTextFieldStyle())
-                        .ignoresSafeArea(.all, edges: .bottom)
-                                .padding()
+                  
+                    
                     
                 Divider()
                 ZStack {
                   MapView()
                 }
-                      .frame(height:500)
+                      .frame(height:480)
                       .padding()
 
            
@@ -48,24 +50,27 @@ struct BusView: View {
                             } label: {
                                 HStack {
                                     Image (systemName: "bus")
-                                        .foregroundColor(.blue)
+                                        .foregroundColor(.white)
                                     Text("Bus Route")
                                         .font(.subheadline)
-                                        .foregroundColor(.blue)
+                                        .foregroundColor(.white)
                                 }
                             }
-                }.padding()
+                }
                         .sheet(isPresented: $showDetail) {
                             BusTable()
                         }
-                    Divider()
+                        .buttonStyle(ParkButton())
+                    
  
             
 
             
-            }
-
-            }
+            }.padding(.top,-40)
+            
+            Divider()
+        }
+    }
     
 }
 

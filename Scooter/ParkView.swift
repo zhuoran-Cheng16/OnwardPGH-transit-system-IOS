@@ -60,7 +60,12 @@ struct ParkView: View {
                     NavigationLink(destination: StartParkView(showDetail: $showDetail), isActive: self.$showDetail) { EmptyView() }
                             Button(action: {
                                 self.displayPopupMessage = true
-                            }) {Text("Start Parking")}
+                            }) {HStack {
+                                Image (systemName: "parkingsign.circle.fill")
+                                    .foregroundColor(.white)
+                                Text("Start Parking")
+                                    .font(.subheadline)
+                                    .foregroundColor(.white)}}
                 
                             .buttonStyle(ParkButton())
                             .alert(isPresented: $displayPopupMessage){
