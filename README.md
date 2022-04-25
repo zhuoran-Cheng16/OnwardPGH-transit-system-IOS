@@ -9,6 +9,29 @@ first attempt
 | [@Alexandra Poltorak] | apoltora@andrew.cmu.edu |
 | [@Yifan Wu]
 
+## Project Introduction 
+
+###Main Page:<br> 
+
+Get Permission            |  Home Page
+:-------------------------:|:-------------------------:
+![alt text](https://github.com/zhuoran-Cheng16/Rapid_SW_team/blob/main/IMG/home.png?raw=true) |  ![alt text](https://github.com/zhuoran-Cheng16/Rapid_SW_team/blob/main/IMG/home1.png?raw=true)
+
+
+###Bus Page:<br>
+Main page             |  Bus Route
+:-------------------------:|:-------------------------:
+![alt text](https://github.com/zhuoran-Cheng16/Rapid_SW_team/blob/main/IMG/bus.png?raw=true)  |  ![alt text](https://github.com/zhuoran-Cheng16/Rapid_SW_team/blob/main/IMG/bus1.png?raw=true)
+
+###Ride Page:<br>
+Main page             |  Feedback page
+:-------------------------:|:-------------------------:
+![alt text](https://github.com/zhuoran-Cheng16/Rapid_SW_team/blob/main/IMG/ride.png?raw=true)  |  ![alt text](https://github.com/zhuoran-Cheng16/Rapid_SW_team/blob/main/IMG/ride1.png?raw=true)
+
+###Park Page:<br>
+Main page             |  Parking Time page
+:-------------------------:|:-------------------------:
+![alt text](https://github.com/zhuoran-Cheng16/Rapid_SW_team/blob/main/IMG/park.png?raw=true)  |  ![alt text](https://github.com/zhuoran-Cheng16/Rapid_SW_team/blob/main/IMG/park1.png?raw=true)
 ## How to contribute on Jira
 
 ```shell
@@ -59,9 +82,3 @@ git push
 ```
 
 ----
-## Jira Part
-- Labels Type
-   1. `Bug`
-   2. `Hard`
-   3. `Medium`
-   4. `Easy`
