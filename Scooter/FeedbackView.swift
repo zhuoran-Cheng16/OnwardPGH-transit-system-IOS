@@ -6,6 +6,9 @@
 //
 
 import SwiftUI
+import Alamofire
+import JSON
+
 struct GrowingButton: ButtonStyle {
     func makeBody(configuration: Configuration) -> some View {
         configuration.label
@@ -197,7 +200,12 @@ struct FeedbackView: View {
                                 dismissButton:
                                 .default(Text("Done"),
                                 action: {
-
+                                        sendPostFeedbackAwsRequest(
+                                            reaction: getResponseWithEmoji(feedback),
+                                            reason: construction ? "Construction" : // if construction, construction. else...
+                                                (hills ? "Hills" : // if hills, hills. else ...
+                                                    (roadClosed ? "Road Closed" : "Bumps")), // if road closed, road closed. else bumps
+                                            comments: comment)
                                         showDetail = false
                                 })
                             )
@@ -228,6 +236,38 @@ struct FeedbackView: View {
             return ""
         }
         }
+    
+    
+    func sendPostFeedbackAwsRequest(reaction: String, reason: String, comments: String) {
+        /**
+         Post Feedback AWS
+         post http://54.208.68.184/api/feedbacks/
+         */
+
+        // Add Headers
+        let headers = [
+            "Content-Type":"application/json; charset=utf-8",
+        ]
+
+        // JSON Body
+        let body: [String : Any] = [
+            "reaction": reaction,
+            "reason": reason,
+            "comments": comments
+        ]
+
+        // Fetch Request
+        Alamofire.request("http://54.208.68.184/api/feedbacks/", method: .post, parameters: body, encoding: JSONEncoding.default, headers: headers)
+            .validate(statusCode: 200..<300)
+            .responseJSON { response in
+                if (response.result.error == nil) {
+                    debugPrint("HTTP Response Body: \(response.data)")
+                }
+                else {
+                    debugPrint("HTTP Request failed: \(response.result.error)")
+                }
+            }
+    }
 }
 
 //struct FeedbackView_Previews: PreviewProvider {
