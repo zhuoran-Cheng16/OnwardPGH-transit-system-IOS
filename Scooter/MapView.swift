@@ -56,7 +56,9 @@ struct MapViewDirection: UIViewRepresentable {
 
     // destination
     let p2 = MKPlacemark(coordinate: CLLocationCoordinate2D(latitude: 40.4512428846061, longitude: -79.95088134077386))
+      
 
+      
     let request = MKDirections.Request()
       
     request.source = MKMapItem(placemark: p1)
