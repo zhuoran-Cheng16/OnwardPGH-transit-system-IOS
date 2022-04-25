@@ -32,6 +32,7 @@ struct ContentView: View {
   @State private var showDirections = false
   @State private var displayPopupMessage: Bool = false
 
+
   var body: some View {
     NavigationView {
       VStack(spacing: 0) {
@@ -53,15 +54,32 @@ struct ContentView: View {
         .padding()
 
         Divider()
+          
         ZStack {
-          ScooterMapView()
 
+          ScooterMapView()
+                .frame(height: 480)
+                .padding()
+        Button(action: {
+//            started = true
+        }) {
+            HStack {
+                Image (systemName: "checkmark.circle.fill")
+                    .foregroundColor(.white)
+                Text("Start Trip")
+                    .font(.subheadline)
+                    .foregroundColor(.white)}
         }
-        .frame(height: 480)
-        .padding()
+              .buttonStyle(ParkButton())
+              .padding(.top, 380)
+        }
+        
 
         VStack(alignment: .leading) {
+
+                
           NavigationLink(
+
             destination: FeedbackView(showDetail: $showDetail), isActive: self.$showDetail
           ) { EmptyView() }
           Button(action: {
@@ -83,6 +101,7 @@ struct ContentView: View {
                 .default(Text("OK"), action: { self.showDetail = true })
             )
           }
+            
         }
 
       }.padding(.top,-40)
