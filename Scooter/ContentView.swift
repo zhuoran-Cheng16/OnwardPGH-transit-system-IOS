@@ -45,7 +45,7 @@ struct ContentView: View {
           HStack {
             Image(systemName: "mappin.and.ellipse")
               .foregroundColor(.red)
-            TextField("Destination", text: $destination)
+            TextField("230 N Craig St, Pittsburgh, PA, 15213", text: $destination)
           }
 
         }

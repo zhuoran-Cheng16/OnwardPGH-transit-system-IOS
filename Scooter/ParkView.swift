@@ -37,7 +37,7 @@ struct ParkView: View {
                                 HStack{
                                     Image (systemName: "mappin.and.ellipse")
                                                                 .foregroundColor(.red)
-                            TextField("Destination", text: $destination)
+                            TextField("4909 Frew St, Pittsburgh, PA, 15213", text: $destination)
                                 }
                                     
                                 }
